@@ -57,4 +57,12 @@ export class EmployeeServiceService {
     return this.http.post(url,formData).pipe(catchError(this.handleError));
   }
 
+  public uploadResume(profileRe:any,id:string){
+    let formData:FormData = new FormData()
+    formData.append('myFile',profileRe)
+    formData.append('jsId',id)
+    const url=`http://localhost:9090/api/v1/personal/uploadResume`
+    return this.http.post(url,formData).pipe(catchError(this.handleError));
+  }
+
 }

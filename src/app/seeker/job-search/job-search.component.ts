@@ -16,6 +16,7 @@ import { PostedjobsComponent } from '../dashboard/postedjobs/postedjobs.componen
 export class JobSearchComponent implements OnInit {
   arrayvalue:any
   value1:any='';
+  value2:any='';
   email:string = ''
   errorMessage: string=''
   eMessage:string= ''
@@ -33,6 +34,7 @@ export class JobSearchComponent implements OnInit {
     console.log(this.pjobs.jobs1);
     
     this.value1=searchForm.value.input1;
+    this.value2=searchForm.value.input2;
     var array = this.value1.split(" ")
     // console.log(array)  
     // console.log(this.value1)
@@ -42,10 +44,10 @@ export class JobSearchComponent implements OnInit {
       this.pjobs.jobs=this.pjobs.jobs.filter(res=>{
         if(this.arrayvalue.toLowerCase().match(res.employee.company.companyName.toLowerCase())){
           // console.log("company")
-          return res.employee.company.companyName.toLowerCase().match(this.arrayvalue.toLowerCase());}
+          return 1;}
         else if(res.jobRole.toLowerCase().match(this.arrayvalue.toLowerCase())){
           //  console.log("jobrole")
-           return res.jobRole.toLowerCase().match(this.arrayvalue.toLowerCase());
+           return 1;
          } 
         else{
               // console.log("skill")
@@ -64,9 +66,18 @@ export class JobSearchComponent implements OnInit {
           })
       }      
      }
+     
     else if(this.value1 == ""){
       this.pjobs.jobs = this.pjobs.jobs1
     }
+    if(this.value2 !== ''){
+      this.pjobs.jobs=this.pjobs.jobs.filter(res=>{
+        if(this.value2.toLowerCase().match(res.officeAddress.toLowerCase())){
+          // console.log("company")
+          return 1}
+        return 0;
+      })
+     }
   }
 } 
 

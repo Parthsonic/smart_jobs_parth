@@ -2,16 +2,13 @@
 -webkit-box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.2);
 -moz-box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.2);
 box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.2);">
-<div class="col-sm-3"></div>
-<div class="col-sm-6 text-center">
- <div class="alert alert-success col-sm-10" *ngIf="loginSuccess;else failMessage">
+<div class="col-sm-9 text-center">
+ <div class="alert alert-success col-sm-10" *ngIf="loginSuccess">
    <strong>{{loginSuccess}} !!</strong>
  </div>
- <ng-template #failMessage>
-   <div class="alert alert-danger" *ngIf="loginFail">
-     <strong>{{loginFail}} !!</strong>
-   </div>
- </ng-template>
+ <div class="alert alert-danger" [hidden]="!eMessage">
+  <strong>{{eMessage}}</strong>
+</div>
 </div>
 
   <div class="col-sm-8">

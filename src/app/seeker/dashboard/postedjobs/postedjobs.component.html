@@ -1,5 +1,10 @@
 <app-job-search></app-job-search>
-<div *ngIf="isSearchEmpty" class="mt-4 mb-5" >
+<div class="container mt-3" *ngIf="errorMessage">
+  <div class="alert alert-danger">
+      <strong>{{errorMessage}}</strong>
+  </div>
+</div>
+<div *ngIf="isSearchEmpty && !errorMessage" class="mt-4 mb-5" >
   <div class="container" style="margin:auto">
     <div class="row">
       <div class="col-sm-4 mb-4 h" *ngFor="let j of jobs">

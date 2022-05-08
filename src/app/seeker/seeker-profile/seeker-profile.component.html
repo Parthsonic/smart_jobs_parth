@@ -31,10 +31,15 @@
             <button type="button" class="btn btn-primary mt-3 mb-1" (click)="upload(profilePersonal.login.userId)">upload</button>
             <br>
 
-            <div>
+            <div style="text-align: center;">
                 <!-- {{profilePersonal.photo['pic'] | json}} -->
-                <img [src]="covertedImage" class="img-thumbnail" alt="" style="width: 250px;height: 200px;">
+                <img [src]="covertedImage" class="img-thumbnail avatar" alt="" style="width: 250px;border:1px solid;height: 200px;">
             </div>
+
+            <!-- <label for="Resume"><strong>Upload Your Resume Here:</strong></label>
+            <input type="file" name="Resume"  (change)="selectResume($event)" />
+            <button type="button" class="btn btn-primary mt-3 mb-1" (click)="uploadR(profilePersonal.login.userId)">upload</button>
+            <br> -->
             <!-- <div class="col-sm-12 p-1">
                 <small><b>Interests:</b></small>
                 <div class="col-sm-6" *ngFor="let interest of profileinfo.interests;let i=index">

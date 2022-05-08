@@ -64,7 +64,7 @@ export class PostedjobsComponent implements OnInit {
         console.log(error)
       });      
     },(error)=>{
-      this.errorMessage="Something bad happened;please try again leter!!!";
+      this.errorMessage="Something bad happened;please try again later!!!";
       console.log(error)
     });
   }

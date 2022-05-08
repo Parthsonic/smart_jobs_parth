@@ -13,6 +13,7 @@ import { EmployeeServiceService } from 'src/app/service/employee-service.service
 export class SeekerProfileComponent implements OnInit {
   profileinfo:any;
   profilepic: any;
+  profileRe: any;
   picexists: boolean = false;
   successmsg: any;
   emailId: string | null = '';
@@ -82,4 +83,25 @@ export class SeekerProfileComponent implements OnInit {
     })
   }
 
+  selectResume(event: any) {
+    if (event.target.files.length > 0) {
+      //const file = event.target.files[0];
+      this.profileRe = event.target.files[0];
+      console.log(this.profileRe);
+    }
+  }
+
+  uploadR(id:string) {
+    
+    this.service.uploadResume(this.profileRe,id)
+    .subscribe((data)=>{
+      console.log(data)
+      alert("Successfully Image Uploaded!!!")
+      this.getProfile()
+    }
+    ,(error)=>{
+      console.log(error)
+      alert("Sorry Can't Upload Image!!!")
+    })
+  }
 }

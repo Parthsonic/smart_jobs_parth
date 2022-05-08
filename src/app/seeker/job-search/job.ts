@@ -12,4 +12,5 @@ export class Job {
     experience:string=''
     button:string=''
     isApplied:boolean = false
+    officeAddress:string=''
 }

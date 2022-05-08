@@ -43,3 +43,8 @@
 .nav-link:active{
     border-left: 4px solid yellow;
 }
+.avatar {
+    vertical-align: middle;
+    border-radius: 50%;
+    
+  }
