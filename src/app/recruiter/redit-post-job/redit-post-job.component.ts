@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IDropdownSettings } from 'ng-multiselect-dropdown';
 import { Employer } from '../employer';
@@ -18,7 +18,7 @@ export class REditPostJobComponent implements OnInit {
   skillsList:any = SkillsList
   dropdownSettings : IDropdownSettings={}
 
-  postJobForm : FormGroup = new FormGroup({})
+  postJobForm : UntypedFormGroup = new UntypedFormGroup({})
   
   employer:Employer = new Employer()
 
@@ -26,7 +26,7 @@ export class REditPostJobComponent implements OnInit {
   EMessage:string = ''
   SMessage:string=''
   
-  constructor(private formBuilder: FormBuilder ,private route:ActivatedRoute,private postJobSerivce:PostedJobsServiceService,private router : Router) { }
+  constructor(private formBuilder: UntypedFormBuilder ,private route:ActivatedRoute,private postJobSerivce:PostedJobsServiceService,private router : Router) { }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('jobPostId')

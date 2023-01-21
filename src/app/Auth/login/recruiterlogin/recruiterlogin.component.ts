@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { UntypedFormGroup, Validators, UntypedFormBuilder } from '@angular/forms';
 import { Login } from 'src/app/pojo/login';
 import { HttpClient, HttpErrorResponse, HttpResponse } from '@angular/common/http';
 import { LoginService } from 'src/app/service/login.service';
@@ -14,8 +14,8 @@ export class RecruiterloginComponent implements OnInit {
   loginfail:boolean=false;
   eMessage:string = ''
   login = new Login();
-  loginForm!: FormGroup;
-  constructor(private router: Router, private fb: FormBuilder, private service: LoginService, private http: HttpClient) { }
+  loginForm!: UntypedFormGroup;
+  constructor(private router: Router, private fb: UntypedFormBuilder, private service: LoginService, private http: HttpClient) { }
 
 
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,11 +10,11 @@ import { Router } from '@angular/router';
 export class EditProfileComponent implements OnInit {
 
   profileinfo: any;
-  seekerProfileForm!: FormGroup;
+  seekerProfileForm!: UntypedFormGroup;
   updated: any;
   userdata:any={};
 
-  constructor(private router: Router, private fb: FormBuilder) { }
+  constructor(private router: Router, private fb: UntypedFormBuilder) { }
 
   ngOnInit(): void {
     this.getProfile();

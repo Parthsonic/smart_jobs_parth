@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {FormBuilder,FormControl,FormGroup,Validators} from '@angular/forms';
+import {UntypedFormBuilder,FormControl,FormGroup,Validators} from '@angular/forms';
 import { Recruiter } from 'src/app/pojo/recruiter';
 import { RecruiterServiceService } from 'src/app/service/recruiter-service.service';
 import { HttpClient, HttpErrorResponse, HttpResponse, HttpStatusCode } from '@angular/common/http';
@@ -15,7 +15,7 @@ import { passwordIntegrityValidator } from 'src/app/directives/password-integrit
 })
 export class RecruiterregisterComponent implements OnInit {
 
-  constructor(private route:ActivatedRoute,private router:Router,private service:RecruiterServiceService,http:HttpClient,private fb:FormBuilder){ }
+  constructor(private route:ActivatedRoute,private router:Router,private service:RecruiterServiceService,http:HttpClient,private fb:UntypedFormBuilder){ }
   
   registrationSuccess:any;
   regisFail:any;

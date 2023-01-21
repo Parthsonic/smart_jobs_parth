@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Company } from 'src/app/pojo/company';
 import { Employer } from 'src/app/pojo/employer';
@@ -29,7 +29,7 @@ export class ProfileComponent implements OnInit {
   msg:any;
   emailId:string|null = ''
 
-  constructor(private router:Router,private empService:EmployerServiceService,private service:RecruiterServiceService,private fb:FormBuilder) { }
+  constructor(private router:Router,private empService:EmployerServiceService,private service:RecruiterServiceService,private fb:UntypedFormBuilder) { }
 
   ngOnInit(): void {
     this.emailId = sessionStorage.getItem('email')

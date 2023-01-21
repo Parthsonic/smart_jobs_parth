@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { UntypedFormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Company } from 'src/app/pojo/company';
 import {Employer} from '../../pojo/employer';
@@ -16,7 +16,7 @@ import { RecruiterServiceService } from 'src/app/service/recruiter-service.servi
 export class EditProfileComponent implements OnInit {
 
   profile:Employer=new Employer();
-  constructor(private router:Router,private fb:FormBuilder,private service:RecruiterServiceService) { }
+  constructor(private router:Router,private fb:UntypedFormBuilder,private service:RecruiterServiceService) { }
 
   recruiterProfileForm=this.fb.group({
     comName:[''],

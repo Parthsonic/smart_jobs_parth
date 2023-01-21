@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {FormBuilder,FormControl,FormGroup,Validators} from '@angular/forms';
+import {UntypedFormBuilder,FormControl,UntypedFormGroup,Validators} from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { EmployerServiceService } from 'src/app/service/employer-service.service';
 import { SkillsList } from 'src/app/pojo/skills-list';
@@ -14,8 +14,8 @@ import { passwordIntegrityValidator } from 'src/app/directives/password-integrit
 })
 export class EmpregisterComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute,private router:Router,private fb:FormBuilder,private service:EmployerServiceService,http:HttpClient,private activatedroute:ActivatedRoute) { }
-  EmpRegisterForm!:FormGroup;
+  constructor(private route: ActivatedRoute,private router:Router,private fb:UntypedFormBuilder,private service:EmployerServiceService,http:HttpClient,private activatedroute:ActivatedRoute) { }
+  EmpRegisterForm!:UntypedFormGroup;
   registrationSuccess:any;
   regisFail:any;
   regisServer:any;

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { UntypedFormBuilder } from '@angular/forms';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import {  EmployeePersonal, JsEduId, JsExpId } from 'src/app/pojo/employee';
@@ -24,7 +24,7 @@ export class SeekerProfileComponent implements OnInit {
   profileEducation:JsEduId=new JsEduId();
   profileExp:JsExpId=new JsExpId();
   thumbnail:any
-  constructor(private sanitizer: DomSanitizer,private router: Router, private service: EmployeeServiceService, private fb: FormBuilder) { }
+  constructor(private sanitizer: DomSanitizer,private router: Router, private service: EmployeeServiceService, private fb: UntypedFormBuilder) { }
 
   ngOnInit(): void {
     this.emailId = sessionStorage.getItem('semail')

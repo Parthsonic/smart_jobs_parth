@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { UntypedFormGroup, Validators, UntypedFormBuilder } from '@angular/forms';
 import { Login } from 'src/app/pojo/login';
 import { LoginService } from 'src/app/service/login.service';
 
@@ -16,9 +16,9 @@ export class EmploginComponent implements OnInit {
   password:any;
   eMessage:string = ''
   login = new Login();
-  constructor(private router: Router,private fb:FormBuilder,private logins:LoginService) { }
+  constructor(private router: Router,private fb:UntypedFormBuilder,private logins:LoginService) { }
 
-  loginForm: FormGroup = this.fb.group({
+  loginForm: UntypedFormGroup = this.fb.group({
     email: [null,Validators.required],
     password: [null,Validators.compose([Validators.required,Validators.minLength(5)])]
   });

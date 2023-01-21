@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {  FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {  UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { IDropdownSettings } from 'ng-multiselect-dropdown';
 import { Employer } from 'src/app/pojo/employer';
@@ -19,14 +19,14 @@ export class PostjobComponent implements OnInit {
   cDate:string = ''
   employeeEmail: string | null = ''
 
-  postJobForm : FormGroup = new FormGroup({})
+  postJobForm : UntypedFormGroup = new UntypedFormGroup({})
   
   employer:Employer = new Employer()
 
   postJob:Postedjob = new Postedjob()
   EMessage:string = ''
 
-  constructor( private formBuilder: FormBuilder ,private pJobService:PostedJobsServiceService,private router:Router) { }
+  constructor( private formBuilder: UntypedFormBuilder ,private pJobService:PostedJobsServiceService,private router:Router) { }
 
   ngOnInit(): void {
     this.employeeEmail = sessionStorage.getItem('email')
