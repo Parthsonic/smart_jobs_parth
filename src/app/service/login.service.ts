@@ -15,16 +15,17 @@ export class LoginService {
   data:any='';
   username:string='';
 
-
+  loginurl = '/login'
+  //loginurl = "http://localhost:9090/login"
   public loginRecruiterFromRemote(login:Login){
-    return (this.http.post<Login>("http://localhost:9090/login",login,
+    return (this.http.post<Login>(this.loginurl,login,
     {observe:'response'})).pipe(catchError(this.handleError));
   }
 
   public loginJobSeekerFromRemote(login:Login){
     console.log("in ser:" + login.userId);
     
-    return (this.http.post<Login>("http://localhost:9090/login",login,
+    return (this.http.post<Login>(this.loginurl,login,
     {observe:'response'})).pipe(catchError(this.handleError));
   }
 

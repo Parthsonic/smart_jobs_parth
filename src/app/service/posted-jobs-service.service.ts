@@ -23,9 +23,10 @@ export class PostedJobsServiceService {
   }
 
 
-  postedJobApiUrl = 'http://localhost:9090/jobpost'
-  
+  postedJobApiUrl = '/jobpost'
+  //postedJobApiUrl = 'http://localhost:9090/jobpost'
   getServerPostedJobs(){
+    console.log("hello no problem 1 ")
     return this.http.get<Postedjob[]>(this.postedJobApiUrl)
     .pipe(catchError(this.handleError))
   }
@@ -34,6 +35,8 @@ export class PostedJobsServiceService {
     const headers = { 'content-type': 'application/x-www-form-urlencoded'}
     let body = new HttpParams()
     body = body.set('email',emailId)
+    console.log("hello no problem 2 ")
+
     return this.http.post<Postedjob[]>(this.postedJobApiUrl+'/findByEmail',body,{'headers':headers})
     .pipe(catchError(this.handleError))
   }
@@ -41,6 +44,8 @@ export class PostedJobsServiceService {
   addJob(postJob:Postedjob){
     const headers = { 'content-type': 'application/json'}  
     const body=JSON.stringify(postJob);
+    console.log("hello no problem 3 ")
+
     console.log(body)
     return this.http.post(this.postedJobApiUrl + '/addjob', body,{'headers':headers}).pipe(catchError(this.handleError))
   }
@@ -51,6 +56,8 @@ export class PostedJobsServiceService {
   }
 
   getJobById(id:number){
+    console.log("hello no problem 4")
+
     const getIdUrl = `${this.postedJobApiUrl}/findjbyid/${id}`
     return this.http.get<Object>(getIdUrl).pipe(catchError(this.handleError))
   }

@@ -26,7 +26,7 @@ export class EmployeeServiceService {
 
   
   getEmpPersonalById(email: any) {
-    const employeePersonalUrl = `http://localhost:9090/api/v1/personal/getPersonalDetails/${email}`
+    const employeePersonalUrl = `api/v1/personal/getPersonalDetails/${email}`
     const headers = { 'content-type': 'application/x-www-form-urlencoded' }
     let body = new HttpParams()
     body = body.set('empId', email)
@@ -37,14 +37,14 @@ export class EmployeeServiceService {
 
   
   getEmpEducationById(email: any) {
-    const employeeEducationUrl = `http://localhost:9090/api/v1/educational/getEducationalDetails/${email}`
+    const employeeEducationUrl = `api/v1/educational/getEducationalDetails/${email}`
     const headers = { 'content-type': 'application/x-www-form-urlencoded' }
     return this.http.post<JsEduId>(employeeEducationUrl ,{'headers':headers}).pipe(catchError(this.handleError))
   }
 
   
   getEmpExpById(email: any) {
-    const  employeeExpUrl = `http://localhost:9090/api/v1/experience/getExperienceDetails/${email}`
+    const  employeeExpUrl = `api/v1/experience/getExperienceDetails/${email}`
     const headers = { 'content-type': 'application/x-www-form-urlencoded' }
     return this.http.post<JsExpId>(employeeExpUrl , { 'headers': headers }).pipe(catchError(this.handleError))
   }
@@ -53,7 +53,7 @@ export class EmployeeServiceService {
     let formData:FormData = new FormData()
     formData.append('myFile',profilePic)
     formData.append('jsId',id)
-    const url=`http://localhost:9090/api/v1/personal/upload`
+    const url=`api/v1/personal/upload`
     return this.http.post(url,formData).pipe(catchError(this.handleError));
   }
 
@@ -61,7 +61,7 @@ export class EmployeeServiceService {
     let formData:FormData = new FormData()
     formData.append('myFile',profileRe)
     formData.append('jsId',id)
-    const url=`http://localhost:9090/api/v1/personal/uploadResume`
+    const url=`api/v1/personal/uploadResume`
     return this.http.post(url,formData).pipe(catchError(this.handleError));
   }
 

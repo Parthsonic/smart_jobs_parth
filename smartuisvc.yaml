@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: smartjobsui
+  name: smart-jobs-ui-svc
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+    nodePort: 32000
+  selector:
+    app: smartjobsui
+  type: NodePort
+status:
+  loadBalancer: {}

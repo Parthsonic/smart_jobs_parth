@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: smartjobsui
+  name: smartjobsui
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: smartjobsui
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: smartjobsui
+    spec:
+      containers:
+      - image: parth2912/smart-jobs-ui
+        name: smart-jobs-ui
+        resources: {}
+status: {}

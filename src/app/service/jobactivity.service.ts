@@ -26,8 +26,8 @@ export class JobactivityService {
       //'Something bad happened;please try again later')
   }
 
-  jobActivityUrl = "http://localhost:9090/api/v1"
-
+  // jobActivityUrl = "http://localhost:9090/api/v1"
+  jobActivityUrl = "/api/v1"
   findJobActivity(id:any){
     const headers = { 'content-type': 'application/x-www-form-urlencoded'}
       let body = new HttpParams()

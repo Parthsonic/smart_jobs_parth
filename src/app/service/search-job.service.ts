@@ -31,8 +31,8 @@ export class SearchJobService {
   }
 
 
-  postedJobApiUrl = 'http://localhost:9090/jobpost'
-  
+   //postedJobApiUrl = 'http://localhost:9090/jobpost'
+  postedJobApiUrl = 'jobpost'
   getServerPostedJobs(){
     return this.http.get<Job[]>(this.postedJobApiUrl)
     .pipe(catchError(this.handlerError))
@@ -44,16 +44,16 @@ export class SearchJobService {
        
       const body=JSON.stringify(appliedjob);
       console.log(body)
-      return this.http.post('http://localhost:9090/api/v1/applyJob', body,{'headers':headers,observe:'response'}).pipe(catchError(this.handlerError))
+      return this.http.post('api/v1/applyJob', body,{'headers':headers,observe:'response'}).pipe(catchError(this.handlerError))
      }
 
    getAppliedJobsByid(id:any){
      console.log(id);
      
-     return this.http.get<AppliedJob[]>(`http://localhost:9090/api/v1/getAppliedJobs/${id}`).pipe(catchError(this.handlerError))
+     return this.http.get<AppliedJob[]>(`api/v1/getAppliedJobs/${id}`).pipe(catchError(this.handlerError))
    }  
 
    getAllAppliedJobs(){
-    return this.http.get<AppliedJob[]>('http://localhost:9090/api/v1/getAllAppliedJobs').pipe(catchError(this.handlerError))
+    return this.http.get<AppliedJob[]>('api/v1/getAllAppliedJobs').pipe(catchError(this.handlerError))
   }  
 }
